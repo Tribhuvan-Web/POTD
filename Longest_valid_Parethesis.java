@@ -4,7 +4,7 @@ import java.util.Stack;
 
 public class Longest_valid_Parethesis {
     public static void main(String[] args) {
-        System.out.println(Longest_valid_ParethesisI(")()()("));
+        System.out.println(Longest_valid_ParethesisI(")()()()"));
     }
 
     public static int Longest_valid_ParethesisI(String s) {

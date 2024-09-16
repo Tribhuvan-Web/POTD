@@ -14,15 +14,12 @@ public class Longest_valid_Parethesis {
         for (int i = 0; i < s.length(); i++) {
             if (s.charAt(i) == '(') {
                 stk.push(i);
-                System.out.println("Valid stack" + stk);
             } else {
                 stk.pop();
                 if (stk.isEmpty()) {
                     stk.push(i);
-                    System.out.println(stk);
                 } else {
                     maxLen = Math.max(maxLen, i - stk.peek());
-                    System.out.println("Maximum length " + maxLen);
                 }
             }
         }

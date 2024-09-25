@@ -1,0 +1,49 @@
+package POTD;
+
+class Node {
+    int data;
+    Node next;
+    Node random;
+
+    Node(int data) {
+        this.data = data;
+    }
+}
+
+public class Clone_list_from_random_pointer {
+
+    Node copyList(Node head) {
+        // your code here
+        if (head == null)
+            return null;
+
+        Node curr = head;
+        while (curr != null) {
+            Node new_node = new Node(curr.data);
+            curr.next = new_node;
+            curr = new_node.next;
+        }
+
+        curr = head;
+        while (curr != null) {
+            if (curr.random != null) {
+                curr.next.random = curr.random.next;
+            }
+            curr = curr.next != null ? curr.next.next : null;
+        }
+
+        Node old_head = head;
+        Node new_head = head.next;
+        Node curr_old = old_head;
+        Node curr_new = new_head;
+
+        while (curr_old != null) {
+            curr_old.next = curr_old.next.next;
+            curr_new.next = curr_new.next != null ? curr_new.next.next : null;
+            curr_old = curr_old.next;
+            curr_new = curr_new.next;
+        }
+
+        return new_head;
+    }
+}

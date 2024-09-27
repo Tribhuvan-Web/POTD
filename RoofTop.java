@@ -6,6 +6,7 @@
  * Explanation: 1, 2, or 2, 3 are the only consecutive buildings with increasing heights 
  * thus maximum number of consecutive steps with an in gain in altitude would be 1 in both cases.
  */
+
 package POTD;
 
 public class RoofTop {
